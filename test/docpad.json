@@ -1,0 +1,13 @@
+{
+	"templateData": {
+		"site": {
+			"services": {
+				"gauges": "gauges-id",
+				"googleAnalytics": "googleAnalytics-id",
+				"mixpanel": "mixpanel-id",
+				"reinvigorate": "reinvigorate-id",
+				"zopim": "zopim-id"
+			}
+		}
+	}
+}

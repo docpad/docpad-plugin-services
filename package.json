@@ -1,0 +1,40 @@
+{
+	"name": "docpad-plugin-services",
+	"version": "2.0.0",
+	"description": "Adds super simple support for many 3rd party services to DocPad",
+	"homepage": "http://docpad.org/plugin/services",
+	"keywords": [
+		"docpad",
+		"docpad-plugin",
+		"gauges", "gaug.es",
+		"ga", "google analytics", "analytics",
+		"mixpanel",
+		"reinvigorate",
+		"zopim"
+	],
+	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+	"maintainers": [
+		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+	],
+	"contributors": [
+		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+	],
+	"bugs": {
+		"url": "https://github.com/docpad/docpad-plugin-services/issues"
+	},
+	"repository" : {
+		"type": "git",
+		"url": "https://github.com/docpad/docpad-plugin-services.git"
+	},
+	"engines" : {
+		"node": ">=0.4",
+		"docpad": ">=6.3 <7"
+	},
+	"devDependencies": {
+		"coffee-script": "1.4.x"
+	},
+	"main": "./out/services.plugin.js",
+	"scripts": {
+		"test": "node ./out/services.test.js"
+	}
+}
