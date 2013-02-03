@@ -2,6 +2,7 @@
 
 Adds super simple support for the following 3rd party services to DocPad:
 
+- [Disqus](http://disqus.com/)
 - [Gauges](http://gaug.es/)
 - [Google Analytics](http://www.google.com.au/analytics/)
 - [Mixpanel](https://mixpanel.com/)
@@ -11,17 +12,26 @@ Adds super simple support for the following 3rd party services to DocPad:
 
 ## Install
 
-1. Install the Plugin
+### Install the Plugin
 
-  ```
-  npm install --save docpad-plugin-services
-  ```
+```
+npm install --save docpad-plugin-services
+```
 
-1. Ensure your layout outputs the scripts block, using eco it will look something like this:
+### Add the Script Block for most services
 
-  ```
-  <%- @getBlock('scripts').toHTML() %>
-  ```
+Ensure your layout includes the scripts block. With eco, it will look something like this:
+
+```
+<%- @getBlock('scripts').toHTML() %>
+```
+
+This is used for the Gauges, Google Analytics, Mixpanel, Reinvigorate, and Zopim services.
+
+
+### Add Template Helpers for special services
+
+- Disqus: `<%- @getDisqus() %>`
 
 
 ## Configure
@@ -33,6 +43,7 @@ Add the following to your [docpad configuration file](http://bevry.me/docpad/con
 templateData:
 	site:
 		services:
+			disqus: 'disqus-id'
 			gauges: 'gauges-id'
 			googleAnalytics: 'googleAnalytics-id'
 			mixpanel: 'mixpanel-id'
@@ -61,4 +72,4 @@ You can discover the history inside the `History.md` file
 
 ## License
 Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
-<br/>Copyright &copy; 2012 [Bevry Pty Ltd](http://bevry.me)
+<br/>Copyright &copy; 2012+ [Bevry Pty Ltd](http://bevry.me)

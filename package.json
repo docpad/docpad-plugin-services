@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-services",
-	"version": "2.0.0",
+	"version": "2.1.0",
 	"description": "Adds super simple support for many 3rd party services to DocPad",
 	"homepage": "http://docpad.org/plugin/services",
 	"keywords": [
@@ -14,13 +14,13 @@
 	],
 	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
 	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
 	],
 	"contributors": [
-		"Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
+		"Benjamin Lupton <b@lupton.cc>(https://github.com/balupton)"
 	],
 	"bugs": {
-		"url": "https://github.com/docpad/docpad-plugin-services/issues"
+		"url": "http://docpad.org/plugin/services/issues"
 	},
 	"repository" : {
 		"type": "git",
@@ -31,7 +31,7 @@
 		"docpad": ">=6.3 <7"
 	},
 	"devDependencies": {
-		"coffee-script": "1.4.x"
+		"coffee-script": "~1.4.0"
 	},
 	"main": "./out/services.plugin.js",
 	"scripts": {

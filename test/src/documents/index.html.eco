@@ -3,6 +3,10 @@
 	<title>Test Page</title>
 </head>
 <body>
+	<!-- Disqus -->
+	<%- @getDisqus() %>
+
+	<!-- Scripts -->
 	<%- @getBlock('scripts').toHTML() %>
 </body>
 </html>

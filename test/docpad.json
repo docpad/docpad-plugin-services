@@ -2,6 +2,7 @@
 	"templateData": {
 		"site": {
 			"services": {
+				"disqus": "disqus-id",
 				"gauges": "gauges-id",
 				"googleAnalytics": "googleAnalytics-id",
 				"mixpanel": "mixpanel-id",
