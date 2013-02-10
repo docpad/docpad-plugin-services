@@ -7,12 +7,132 @@ module.exports = (BasePlugin) ->
 
 		# Template Data Helpers
 		templateData:
+			# Get Social Buttons
+			getSocialButtons: ->
+				# Prepare
+				result = ''
+
+				# Social Buttons
+				socialButtons = ['GooglePlusOne','FacebookLike','FacebookFollow','TwitterTweet','TwitterFollow','GithubFollow','QuoraFollow']
+				for socialButton in socialButtons
+					result += @['get'+socialButton+'Button'].call(@)
+				
+				# Return
+				return result
+
+			# Get Google Plus One Button
+			getGooglePlusOneButton: ->
+				# Prepare
+				pageUrl = (@site.url or '')+@document.url
+
+				# Return
+				return """
+					<div class="google-plus-one-button social-button">
+						<div class="g-plusone" data-size="medium" data-href="#{escape pageUrl}"></div>
+						<script>
+							(function() {
+								var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+								po.src = 'https://apis.google.com/js/plusone.js';
+								var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+							})();
+						</script>
+					</div>
+					"""
+
+			# Get Facebook Like Button
+			getFacebookLikeButton: ->
+				# Prepare
+				facebookApplicationId = @site?.services.facebookLikeButton?.applicationId or '266367676718271'
+				pageUrl = (@site.url or '')+@document.url
+				return ''  unless facebookApplicationId
+
+				# Return
+				return """
+					<div class="facebook-like-button social-button">
+						<iframe src="//www.facebook.com/plugins/like.php?href=#{escape pageUrl}&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=#{escape facebookApplicationId}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+					</div>
+					"""
+
+			# Get Facebook Follow Button
+			getFacebookFollowButton: ->
+				# Prepare
+				facebookApplicationId = @site?.services.facebookFollowButton?.applicationId or '266367676718271'
+				facebookUsername = @site?.services.facebookFollowButton?.username
+				return ''  unless (facebookUsername and facebookApplicationId)
+
+				# Return
+				return """
+					<div class="facebook-follow-button social-button">
+						<iframe src="//www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2F#{escape facebookUsername}&amp;layout=button_count&amp;show_faces=false&amp;colorscheme=light&amp;font&amp;width=450&amp;appId=#{escape facebookApplicationId}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height: 20px;" allowTransparency="true"></iframe>
+					</div>
+					"""
+
+
+			# Get Twitter Tweet Button
+			getTwitterTweetButton: ->
+				# Prepare
+				twitterUsername = @site?.services.twitterTweetButton
+				return ''  unless twitterUsername
+
+				# Return
+				return """
+					<div class="twitter-tweet-button social-button">
+						<a href="https://twitter.com/share" class="twitter-share-button" data-via="#{twitterUsername}" data-related="#{twitterUsername}">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+					"""
+
+			# Get Twitter Follow Button
+			getTwitterFollowButton: ->
+				# Prepare
+				twitterUsername = @site?.services.twitterFollowButton
+				return ''  unless twitterUsername
+
+				# Return
+				return """
+					<div class="twitter-follow-button social-button">
+						<a href="https://twitter.com/#{twitterUsername}" class="twitter-follow-button" data-show-count="false">Follow @#{twitterUsername}</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+					"""
+
+			# Get Github Follow Button
+			getGithubFollowButton: ->
+				# Prepare
+				githubUsername = @site?.services.githubFollowButton
+				return ''  unless githubUsername
+
+				# Return
+				return """
+					<div class="github-follow-button social-button">
+						<iframe src="//ghbtns.com/github-btn.html?user=#{githubUsername}&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+					</div>
+					"""
+
+			# Get Quora Follow Button
+			getQuoraFollowButton: ->
+				# Prepare
+				quoraUsername = @site?.services.quoraFollowButton
+				quoraRealname = quoraUsername.replace(/-/g,' ')
+				quoraCode = '7N31XJs'
+				return ''  unless quoraUsername
+
+				# Return
+				return """
+					<div class="quora-follow-button social-button">
+						<span class="quora-follow-button" data-name="#{quoraUsername}">
+							Follow <a href="http://www.quora.com/#{quoraUsername}">#{quoraRealname}</a> on <a href="http://www.quora.com">Quora</a>
+							<script type="text/javascript" src="//www.quora.com/widgets/follow?embed_code=#{quoraCode}"></script>
+						</span>
+					</div>
+					"""
+
 			# Disqus
 			getDisqus: ->
 				# Prepare
 				disqusShortname = @site?.services.disqus
 				disqusDeveloper = if 'production' in @getEnvironments() then '0' else '1'
-				siteUrl = @site?.url
+				pageUrl = (@site.url or '')+@document.url
 				disqusIdentifier = @document.slug
 				disqusTitle = @document.title or @document.name
 				return ''  unless disqusShortname
@@ -24,12 +144,7 @@ module.exports = (BasePlugin) ->
 						(function(){
 							window.disqus_shortname = '#{disqusShortname}';
 							window.disqus_developer = '#{disqusDeveloper}';
-							#{
-								if siteUrl
-									"window.disqus_url = document.location.href.replace(document.location.protocol+'//'+document.location.host, '#{siteUrl}')"
-								else
-									"window.disqus_url = document.location.href"
-							}
+							window.disqus_url = '#{pageUrl}';
 							window.disqus_identifier = '#{disqusIdentifier}';
 							window.disqus_title = '#{disqusTitle}';
 							if ( window.DISQUS ) {
@@ -160,7 +275,7 @@ module.exports = (BasePlugin) ->
 			# Service Scripts
 			serviceScripts = ['Gauges','GoogleAnalytics','Mixpanel','Reinvigorate','Zopim']
 			for serviceScript in serviceScripts
-				serviceScriptContent = @templateData['get'+serviceScript].call(templateData)
+				serviceScriptContent = templateData['get'+serviceScript].call(templateData)
 				scripts.push(serviceScriptContent)  if serviceScriptContent
 
 			# Script

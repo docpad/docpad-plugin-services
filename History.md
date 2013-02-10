@@ -1,5 +1,15 @@
 ## History
 
+- v2.2.0 February 10, 2013
+	- Added support for:
+		- Google Plus One Button
+		- Facebook Like Button
+		- Facebook Follow Button
+		- Twitter Tweet Button
+		- Twitter Follow Button
+		- Github Follow Button
+		- Quora Follow Button
+
 - v2.1.0 February 3, 2013
 	- Added support for [Disqus](http://disqus.com/) via `@getDisqus()` template helper
 	- Added template helpers for all supported services

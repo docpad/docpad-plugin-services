@@ -3,6 +3,9 @@
 	<title>Test Page</title>
 </head>
 <body>
+	<!-- Social Buttons -->
+	<%- @getSocialButtons() %>
+
 	<!-- Disqus -->
 	<%- @getDisqus() %>
 

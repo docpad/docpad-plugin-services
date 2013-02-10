@@ -1,0 +1,21 @@
+{
+	templateData:
+		site:
+			url: 'http://my-production-website.com'
+			services:
+				facebookLikeButton:
+					applicationId: '266367676718271'
+				facebookFollowButton:
+					applicationId: '266367676718271'
+					username: 'balupton'
+				twitterTweetButton: 'balupton'
+				twitterFollowButton: 'balupton'
+				githubFollowButton: 'balupton'
+				quoraFollowButton: 'Benjamin-Lupton'
+				disqus: 'disqus-id'
+				gauges: 'gauges-id'
+				googleAnalytics: 'googleAnalytics-id'
+				mixpanel: 'mixpanel-id'
+				reinvigorate: 'reinvigorate-id'
+				zopim: 'zopim-id'
+}

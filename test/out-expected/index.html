@@ -3,13 +3,42 @@
     <title>Test Page</title>
 </head>
 <body>
+    <!-- Social Buttons -->
+    <div class="google-plus-one-button social-button">
+	<div class="g-plusone" data-size="medium" data-href="http%3A//my-production-website.com/index.html"></div>
+	<script>
+		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+	</script>
+</div><div class="facebook-like-button social-button">
+	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A//my-production-website.com/index.html&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=266367676718271" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+</div><div class="facebook-follow-button social-button">
+	<iframe src="//www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fbalupton&amp;layout=button_count&amp;show_faces=false&amp;colorscheme=light&amp;font&amp;width=450&amp;appId=266367676718271" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height: 20px;" allowTransparency="true"></iframe>
+</div><div class="twitter-tweet-button social-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-via="balupton" data-related="balupton">Tweet</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div><div class="twitter-follow-button social-button">
+	<a href="https://twitter.com/balupton" class="twitter-follow-button" data-show-count="false">Follow @balupton</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div><div class="github-follow-button social-button">
+	<iframe src="//ghbtns.com/github-btn.html?user=balupton&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+</div><div class="quora-follow-button social-button">
+	<span class="quora-follow-button" data-name="Benjamin-Lupton">
+		Follow <a href="http://www.quora.com/Benjamin-Lupton">Benjamin Lupton</a> on <a href="http://www.quora.com">Quora</a>
+		<script type="text/javascript" src="//www.quora.com/widgets/follow?embed_code=7N31XJs"></script>
+	</span>
+</div>
+
     <!-- Disqus -->
     <div id="disqus_thread"></div>
 <script>
 	(function(){
 		window.disqus_shortname = 'disqus-id';
 		window.disqus_developer = '1';
-		window.disqus_url = document.location.href
+		window.disqus_url = 'http://my-production-website.com/index.html';
 		window.disqus_identifier = 'index';
 		window.disqus_title = 'index.html';
 		if ( window.DISQUS ) {
@@ -35,10 +64,10 @@
     <!-- Scripts -->
     <script >var _gauges = _gauges || [];
 (function(){
-	var t   = document.createElement('script');
-	t.type  = 'text/javascript';
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
 	t.async = true;
-	t.id	= 'gauges-tracker';
+	t.id = 'gauges-tracker';
 	t.setAttribute('data-site-id', 'gauges-id');
 	t.src = '//secure.gaug.es/track.js';
 	var s = document.getElementsByTagName('script')[0];
