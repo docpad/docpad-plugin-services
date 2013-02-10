@@ -112,7 +112,7 @@ module.exports = (BasePlugin) ->
 			# Get Quora Follow Button
 			getQuoraFollowButton: ->
 				# Prepare
-				quoraUsername = @site?.services.quoraFollowButton
+				quoraUsername = @site?.services.quoraFollowButton or ''
 				quoraRealname = quoraUsername.replace(/-/g,' ')
 				quoraCode = '7N31XJs'
 				return ''  unless quoraUsername

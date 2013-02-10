@@ -1,5 +1,8 @@
 ## History
 
+- v2.2.1 February 10, 2013
+	- Fixed break when Quora follow button is not configured
+
 - v2.2.0 February 10, 2013
 	- Added support for:
 		- Google Plus One Button
