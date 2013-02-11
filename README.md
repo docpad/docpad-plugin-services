@@ -12,6 +12,8 @@ Adds super simple support for the following 3rd party services to DocPad:
 As well as social buttons for:
 
 - Google Plus One
+- Reddit Submit Button
+- Hacker News Submitt Button
 - Facebook Like
 - Facebook Follow
 - Twitter Tweet
