@@ -1,5 +1,11 @@
 ## History
 
+- v2.2.2 February 11, 2013
+	- Like/submit urls are now clean
+	- Added support for:
+		- Reddit Submit Button
+		- Hacker News Submit Button
+
 - v2.2.1 February 10, 2013
 	- Fixed break when Quora follow button is not configured
 

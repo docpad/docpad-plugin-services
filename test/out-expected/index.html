@@ -5,7 +5,7 @@
 <body>
     <!-- Social Buttons -->
     <div class="google-plus-one-button social-button">
-	<div class="g-plusone" data-size="medium" data-href="http%3A//my-production-website.com/index.html"></div>
+	<div class="g-plusone" data-size="medium" data-href="http%3A//my-production-website.com"></div>
 	<script>
 		(function() {
 			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -13,8 +13,20 @@
 			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 		})();
 	</script>
+</div><div class="reddit-submit-button social-button">
+	<script type="text/javascript" src="http://en.reddit.com/static/button/button1.js"></script>
+</div><div class="hacker-news-submit-button social-button">
+	<a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="http://my-production-website.com">Vote on HN</a>
+	<script>
+		(function(d, t) {
+			var g = d.createElement(t),
+				s = d.getElementsByTagName(t)[0];
+				g.src = '//hnbutton.appspot.com/static/hn.min.js';
+			s.parentNode.insertBefore(g, s);
+		}(document, 'script'));
+	</script>
 </div><div class="facebook-like-button social-button">
-	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A//my-production-website.com/index.html&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=266367676718271" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A//my-production-website.com&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=266367676718271" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
 </div><div class="facebook-follow-button social-button">
 	<iframe src="//www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fbalupton&amp;layout=button_count&amp;show_faces=false&amp;colorscheme=light&amp;font&amp;width=450&amp;appId=266367676718271" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height: 20px;" allowTransparency="true"></iframe>
 </div><div class="twitter-tweet-button social-button">
@@ -38,7 +50,7 @@
 	(function(){
 		window.disqus_shortname = 'disqus-id';
 		window.disqus_developer = '1';
-		window.disqus_url = 'http://my-production-website.com/index.html';
+		window.disqus_url = 'http://my-production-website.com';
 		window.disqus_identifier = 'index';
 		window.disqus_title = 'index.html';
 		if ( window.DISQUS ) {

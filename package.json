@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-services",
-	"version": "2.2.1",
+	"version": "2.2.2",
 	"description": "Adds super simple support for many 3rd party services to DocPad",
 	"homepage": "http://docpad.org/plugin/services",
 	"keywords": [
@@ -9,7 +9,7 @@
 		"gauges", "gaug.es",
 		"ga", "google analytics", "analytics",
 		"facebook-like", "facebook-follow", "twitter-tweet", "twitter-follow",
-		"github-follow", "quora-follow",
+		"github-follow", "quora-follow", "hacker-news-submit", "reddit-submit",
 		"mixpanel",
 		"reinvigorate",
 		"zopim"

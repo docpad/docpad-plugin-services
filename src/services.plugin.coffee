@@ -13,17 +13,18 @@ module.exports = (BasePlugin) ->
 				result = ''
 
 				# Social Buttons
-				socialButtons = ['GooglePlusOne','FacebookLike','FacebookFollow','TwitterTweet','TwitterFollow','GithubFollow','QuoraFollow']
+				socialButtons = ['GooglePlusOne','RedditSubmit','HackerNewsSubmit','FacebookLike','FacebookFollow','TwitterTweet','TwitterFollow','GithubFollow','QuoraFollow']
 				for socialButton in socialButtons
 					result += @['get'+socialButton+'Button'].call(@)
-				
+
 				# Return
 				return result
 
 			# Get Google Plus One Button
 			getGooglePlusOneButton: ->
 				# Prepare
-				pageUrl = (@site.url or '')+@document.url
+				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
+				return ''  if  @site?.services.googlePlusOneButton is false
 
 				# Return
 				return """
@@ -39,11 +40,45 @@ module.exports = (BasePlugin) ->
 					</div>
 					"""
 
+			# Get Reddit Submit Button
+			getRedditSubmitButton: ->
+				# Prepare
+				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
+				return ''  if  @site?.services.redditSubmitButton is false
+
+				# Return
+				return """
+					<div class="reddit-submit-button social-button">
+						<script type="text/javascript" src="http://en.reddit.com/static/button/button1.js"></script>
+					</div>
+					"""
+
+			# Get Hacker News Submit Button
+			getHackerNewsSubmitButton: ->
+				# Prepare
+				#pageTitle = (@document.title or @document.name or @site.title)
+				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
+				return ''  if  @site?.services.hackerNewsSubmitButton is false
+
+				# Return
+				return """
+					<div class="hacker-news-submit-button social-button">
+						<a href="http://news.ycombinator.com/submit" class="hn-share-button" data-url="#{pageUrl}">Vote on HN</a>
+						<script>
+							(function(d, t) {
+								var g = d.createElement(t),
+									s = d.getElementsByTagName(t)[0];
+									g.src = '//hnbutton.appspot.com/static/hn.min.js';
+								s.parentNode.insertBefore(g, s);
+							}(document, 'script'));
+						</script>
+					</div>
+					"""
 			# Get Facebook Like Button
 			getFacebookLikeButton: ->
 				# Prepare
 				facebookApplicationId = @site?.services.facebookLikeButton?.applicationId or '266367676718271'
-				pageUrl = (@site.url or '')+@document.url
+				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
 				return ''  unless facebookApplicationId
 
 				# Return
@@ -109,6 +144,7 @@ module.exports = (BasePlugin) ->
 					</div>
 					"""
 
+
 			# Get Quora Follow Button
 			getQuoraFollowButton: ->
 				# Prepare
@@ -132,7 +168,7 @@ module.exports = (BasePlugin) ->
 				# Prepare
 				disqusShortname = @site?.services.disqus
 				disqusDeveloper = if 'production' in @getEnvironments() then '0' else '1'
-				pageUrl = (@site.url or '')+@document.url
+				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
 				disqusIdentifier = @document.slug
 				disqusTitle = @document.title or @document.name
 				return ''  unless disqusShortname
