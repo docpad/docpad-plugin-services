@@ -1,5 +1,8 @@
 ## History
 
+- v2.2.3 March 7, 2013
+	- Repackaged
+
 - v2.2.2 February 11, 2013
 	- Like/submit urls are now clean
 	- Added support for:
