@@ -75,31 +75,137 @@ module.exports = (BasePlugin) ->
           </div>
           """
       # Get Facebook Like Button
-      getFacebookLikeButton: ->
+      getFacebookLike: (type,send,layout,width,faces,font,colorscheme,action,fb_ref,fb_source) ->
         # Prepare
-        facebookApplicationId = @site?.services.facebookLikeButton?.applicationId or '266367676718271'
+        type = (if typeof type isnt "undefined" then type else 'html5')
+        send = (if typeof send isnt "undefined" then send else false)
+        layout = (if typeof layout isnt "undefined" then layout else 'standard')
+        width = (if typeof width isnt "undefined" then width else '450')
+        faces = (if typeof faces isnt "undefined" then faces else true)
+        font = (if typeof font isnt "undefined" then font else 'lucida grande')
+        colorscheme = (if typeof colorscheme isnt "undefined" then colorscheme else 'light')
+        action = (if typeof action isnt "undefined" then action else 'like')
+        fb_ref = (if typeof fb_ref isnt "undefined" then fb_ref else '')
+        fb_source = (if typeof fb_source isnt "fb_source" then colorscheme else '')
+        facebookApplicationId = @site?.services.fbAppId or '266367676718271'
         pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
         return ''  unless facebookApplicationId
 
         # Return
-        return """
-          <div class="facebook-like-button social-button">
-            <iframe src="//www.facebook.com/plugins/like.php?href=#{escape pageUrl}&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21&amp;appId=#{escape facebookApplicationId}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+        switch type
+          when 'html5'
+            bulk = """
+              <div id="fb-root"></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{escape facebookApplicationId}";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+              <div class="fb-like" data-send="#{send}" data-layout="#{layout}" data-width="#{width}" data-show-faces="#{faces}" data-font="#{font}" data-colorscheme="#{colorscheme}" data-action="#{action}" fb_ref="#{fb_ref}" fb_source="#{fb_source}"></div>
+              """
+          when 'xfbml'
+            bulk = """
+              <div id="fb-root"></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{escape facebookApplicationId}";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+              <fb:like send="#{send}" layout="#{layout} width="#{width}" show_faces="#{faces}" font="#{font}" colorscheme="#{colorscheme}" action="#{action}" fb_ref="#{fb_ref}" fb_source="#{fb_source}"></fb:like>
+              """
+          when 'iframe'
+            bulk = """
+              <div class="facebook-like-button social-button">
+            <iframe src="//www.facebook.com/plugins/like.php?href=#{escape pageUrl}&amp;send=#{send}&amp;layout=#{layout}&amp;width={width}&amp;show_faces=#{faces}&amp;#{escape font}&amp;colorscheme=#{colorscheme}&amp;action={#action}&amp;height=21&amp;appId=#{escape facebookApplicationId}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:#{width}; height:21px;" allowTransparency="true"></iframe>
           </div>
+              """
+          when 'url'
+            bulk = """
+              http://www.facebook.com/plugins/like.php?href=#{escape pageUrl}&amp;send=#{send}&amp;layout=#{layout}&amp;width={width}&amp;show_faces=#{faces}&amp;#{escape font}&amp;colorscheme=#{colorscheme}&amp;action={#action}&amp;height=21&amp;appId=#{escape facebookApplicationId}
+              """
+        return """
+          #{bulk}
           """
 
       # Get Facebook Follow Button
-      getFacebookFollowButton: ->
+      getFacebookFollow: (type,layout,faces,colorscheme,font,width) ->
         # Prepare
-        facebookApplicationId = @site?.services.facebookFollowButton?.applicationId or '266367676718271'
-        facebookUsername = @site?.services.facebookFollowButton?.username
+        type = (if typeof type isnt "undefined" then type else 'html5')
+        layout = (if typeof layout isnt "undefined" then layout else 'standard')
+        faces = (if typeof faces isnt "undefined" then faces else true)
+        colorscheme = (if typeof colorscheme isnt "undefined" then colorscheme else 'light')
+        font = (if typeof font isnt "undefined" then font else 'lucida grande')
+        width = (if typeof width isnt "undefined" then width else '450')
+        facebookApplicationId = @site?.services.fbAppId or '266367676718271'
+        facebookUsername = @site?.services.facebookFollowButton?.username or 'mikeumus'
         return ''  unless (facebookUsername and facebookApplicationId)
 
         # Return
+        switch type
+          when 'html5'
+            bulk = """
+              <div id="fb-root"></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{facebookApplicationId}";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+              <div class="fb-follow" data-href="https://www.facebook.com/#{escape facebookUsername}" data-layout="#{layout}" data-show-faces="#{faces}" data-colorscheme="#{colorscheme}" data-font="#{font}" data-width="#{width}"></div>
+              """
+          when 'xfbml'
+            bulk = """
+              <div id="fb-root"></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{facebookApplicationId}";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+              <fb:follow href="#{escape facebookUsername}" layout="#{layout}" show_faces="#{faces}" colorscheme="#{colorscheme}" font="#{font}" width="#{width}"></fb:follow>
+              """
+          when 'iframe'
+            bulk = """
+              <div class="facebook-follow-button social-button">
+               <iframe src="//www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2F#{escape facebookUsername}&amp;layout=#{escape layout}&amp;show_faces=#{faces}&amp;colorscheme=#{colorscheme};#{escape font}&amp;width=#{width}&amp;appId=#{escape facebookApplicationId}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:#{width}px; height:20px;" allowTransparency="true"></iframe>
+              </div>
+              """
+          when 'url'
+            bulk = """
+              http://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2F#{escape facebookUsername}&layout=#{layout}&show_faces=#{faces}&colorscheme=#{colorscheme}&font=#{escape font}&width=#{width}&appId=#{facebookApplicationId}
+              """
         return """
-          <div class="facebook-follow-button social-button">
-            <iframe src="//www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2F#{escape facebookUsername}&amp;layout=button_count&amp;show_faces=false&amp;colorscheme=light&amp;font&amp;width=450&amp;appId=#{escape facebookApplicationId}" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height: 20px;" allowTransparency="true"></iframe>
-          </div>
+          #{bulk}
+          """
+
+      # Facebook Comments
+      # See https://developers.facebook.com/docs/reference/plugins/comments/
+      getFacebookComments: (width,colorscheme,num_posts,order_by) ->
+        # Prepare
+        width = (if typeof width isnt "undefined" then width else '470')
+        colorscheme = (if typeof colorscheme isnt "undefined" then colorscheme else 'light')
+        num_posts = (if typeof num_posts isnt "undefined" then num_posts else '10')
+        order_by = (if typeof order_by isnt "undefined" then order_by else 'social')
+        facebookApplicationId = @site?.services.fbAppId or '266367676718271'
+        pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
+        return ''  unless facebookApplicationId
+        # Return
+        return """
+          <div id="fb-root"></div>
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{escape facebookApplicationId}";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+          <div class="fb-comments" data-href="#{pageUrl}" data-width="#{width}" data-num-posts="#{num_posts}" data-colorscheme="#{colorscheme}" data-order-by="#{order_by}"></div>
           """
 
 
@@ -202,57 +308,6 @@ module.exports = (BasePlugin) ->
           </script>
           <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
           <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-          """
-
-      # Facebook Comments
-      # See https://developers.facebook.com/docs/reference/plugins/comments/
-      getFacebookComments: ->
-        # Prepare
-        facebookApplicationId = @site?.services.facebookLikeButton?.applicationId or '266367676718271'
-        pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
-        return ''  unless facebookApplicationId
-        # Return
-        return """
-          <meta property="fb:app_id" content="#{facebookApplicationId}"/>
-          <div id="fb-root"></div>
-          <script>
-            window.fbAsyncInit = function() {
-              // init the FB JS SDK
-              FB.init({
-                appId      : '#{facebookApplicationId}', /* App ID from the App Dashboard */
-                channelUrl : '#{pageUrl}/fb-comments.html', /* Channel File for x-domain communication */
-                status     : true, // check the login status upon init?
-                cookie     : true, // set sessions cookies to allow your server to access the session?
-                xfbml      : true  // parse XFBML tags on this page?
-              });
-
-              // Additional initialization code such as adding Event Listeners goes here
-
-            };
-
-            // Load the SDK's source Asynchronously
-            // Note that the debug version is being actively developed and might 
-            // contain some type checks that are overly strict. 
-            // Please report such bugs using the bugs tool.
-            (function(d, debug){
-               var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-               if (d.getElementById(id)) {return;}
-               js = d.createElement('script'); js.id = id; js.async = true;
-               js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
-               ref.parentNode.insertBefore(js, ref);
-             }(document, /*debug*/ false));
-          </script>
-
-          <div id="fb-root"></div>
-          <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=#{escape facebookApplicationId}";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script>
-
-          <div class="fb-comments" data-href="#{pageUrl}" data-width="470" data-num-posts="10"></div>
           """
 
       # Gauges
