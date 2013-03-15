@@ -6,6 +6,9 @@
 	<!-- Social Buttons -->
 	<%- @getSocialButtons() %>
 
+	<!-- Social Buttons Limited -->
+	<%- @getSocialButtons(['RedditSubmit']) %>
+
 	<!-- Disqus -->
 	<%- @getDisqus() %>
 

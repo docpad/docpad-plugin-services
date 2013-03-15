@@ -1,5 +1,8 @@
 ## History
 
+- v2.2.4 March 15, 2013
+	- Added the ability to specify which social buttons you want outputted on the `getSocialButtons` method
+
 - v2.2.3 March 7, 2013
 	- Repackaged
 

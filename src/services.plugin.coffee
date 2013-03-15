@@ -8,12 +8,12 @@ module.exports = (BasePlugin) ->
 		# Template Data Helpers
 		templateData:
 			# Get Social Buttons
-			getSocialButtons: ->
+			getSocialButtons: (socialButtons) ->
 				# Prepare
 				result = ''
 
 				# Social Buttons
-				socialButtons = ['GooglePlusOne','RedditSubmit','HackerNewsSubmit','FacebookLike','FacebookFollow','TwitterTweet','TwitterFollow','GithubFollow','QuoraFollow']
+				socialButtons or= ['GooglePlusOne','RedditSubmit','HackerNewsSubmit','FacebookLike','FacebookFollow','TwitterTweet','TwitterFollow','GithubFollow','QuoraFollow']
 				for socialButton in socialButtons
 					result += @['get'+socialButton+'Button'].call(@)
 
