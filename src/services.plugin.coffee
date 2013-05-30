@@ -88,11 +88,12 @@ module.exports = (BasePlugin) ->
 						</script>
 					</div>
 					"""
+
 			# Get Facebook Like Button
 			getFacebookLikeButton: ->
 				# Prepare
 				services = @getServices()
-				facebookApplicationId = services.facebookLikeButton?.applicationId or '266367676718271'
+				facebookApplicationId = services.facebookLikeButton?.applicationId ? '266367676718271'
 				return ''  unless facebookApplicationId
 				pageUrl = @getPageUrl()
 
@@ -107,7 +108,7 @@ module.exports = (BasePlugin) ->
 			getFacebookFollowButton: ->
 				# Prepare
 				services = @getServices()
-				facebookApplicationId = services.facebookFollowButton?.applicationId or '266367676718271'
+				facebookApplicationId = services.facebookFollowButton?.applicationId ? '266367676718271'
 				facebookUsername = services.facebookFollowButton?.username
 				return ''  unless (facebookUsername and facebookApplicationId)
 
@@ -168,7 +169,7 @@ module.exports = (BasePlugin) ->
 			getQuoraFollowButton: ->
 				# Prepare
 				services = @getServices()
-				quoraUsername = services.quoraFollowButton or ''
+				quoraUsername = services.quoraFollowButton ? ''
 				return ''  unless quoraUsername
 				quoraRealname = quoraUsername.replace(/-/g,' ')
 				quoraCode = '7N31XJs'

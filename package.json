@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-services",
-	"version": "2.2.5",
+	"version": "2.2.6",
 	"description": "Adds super simple support for many 3rd party services to DocPad",
 	"homepage": "http://docpad.org/plugin/services",
 	"keywords": [

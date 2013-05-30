@@ -1,5 +1,8 @@
 ## History
 
+- v2.2.6 May 30, 2013
+	- Can now disable the facebook buttons by setting their `applicationId` property to `false`
+
 - v2.2.5 May 30, 2013
 	- Fix facebook like button on home page
 	- Mild performance improvement
