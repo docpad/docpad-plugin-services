@@ -1,5 +1,10 @@
 ## History
 
+- v2.2.5 May 30, 2013
+	- Fix facebook like button on home page
+	- Mild performance improvement
+	- Updated for latest DocPad conventions
+
 - v2.2.4 March 15, 2013
 	- Added the ability to specify which social buttons you want outputted on the `getSocialButtons` method
 

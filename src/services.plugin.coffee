@@ -7,6 +7,17 @@ module.exports = (BasePlugin) ->
 
 		# Template Data Helpers
 		templateData:
+			# Get Services
+			getServices: ->
+				services = @site?.services or {}
+				return services
+
+			# Get Page Url
+			getPageUrl: ->
+				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
+				pageUrl or= '/'  # home pages
+				return pageUrl
+
 			# Get Social Buttons
 			getSocialButtons: (socialButtons) ->
 				# Prepare
@@ -23,8 +34,9 @@ module.exports = (BasePlugin) ->
 			# Get Google Plus One Button
 			getGooglePlusOneButton: ->
 				# Prepare
-				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
-				return ''  if  @site?.services.googlePlusOneButton is false
+				services = @getServices()
+				return ''  if services.googlePlusOneButton is false
+				pageUrl = @getPageUrl()
 
 				# Return
 				return """
@@ -43,8 +55,9 @@ module.exports = (BasePlugin) ->
 			# Get Reddit Submit Button
 			getRedditSubmitButton: ->
 				# Prepare
-				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
-				return ''  if  @site?.services.redditSubmitButton is false
+				services = @getServices()
+				return ''  if services.redditSubmitButton is false
+				pageUrl = @getPageUrl()
 
 				# Return
 				return """
@@ -56,9 +69,10 @@ module.exports = (BasePlugin) ->
 			# Get Hacker News Submit Button
 			getHackerNewsSubmitButton: ->
 				# Prepare
+				services = @getServices()
+				return ''  if  services.hackerNewsSubmitButton is false
 				#pageTitle = (@document.title or @document.name or @site.title)
-				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
-				return ''  if  @site?.services.hackerNewsSubmitButton is false
+				pageUrl = @getPageUrl()
 
 				# Return
 				return """
@@ -77,9 +91,10 @@ module.exports = (BasePlugin) ->
 			# Get Facebook Like Button
 			getFacebookLikeButton: ->
 				# Prepare
-				facebookApplicationId = @site?.services.facebookLikeButton?.applicationId or '266367676718271'
-				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
+				services = @getServices()
+				facebookApplicationId = services.facebookLikeButton?.applicationId or '266367676718271'
 				return ''  unless facebookApplicationId
+				pageUrl = @getPageUrl()
 
 				# Return
 				return """
@@ -91,8 +106,9 @@ module.exports = (BasePlugin) ->
 			# Get Facebook Follow Button
 			getFacebookFollowButton: ->
 				# Prepare
-				facebookApplicationId = @site?.services.facebookFollowButton?.applicationId or '266367676718271'
-				facebookUsername = @site?.services.facebookFollowButton?.username
+				services = @getServices()
+				facebookApplicationId = services.facebookFollowButton?.applicationId or '266367676718271'
+				facebookUsername = services.facebookFollowButton?.username
 				return ''  unless (facebookUsername and facebookApplicationId)
 
 				# Return
@@ -106,7 +122,8 @@ module.exports = (BasePlugin) ->
 			# Get Twitter Tweet Button
 			getTwitterTweetButton: ->
 				# Prepare
-				twitterUsername = @site?.services.twitterTweetButton
+				services = @getServices()
+				twitterUsername = services.twitterTweetButton
 				return ''  unless twitterUsername
 
 				# Return
@@ -120,7 +137,8 @@ module.exports = (BasePlugin) ->
 			# Get Twitter Follow Button
 			getTwitterFollowButton: ->
 				# Prepare
-				twitterUsername = @site?.services.twitterFollowButton
+				services = @getServices()
+				twitterUsername = services.twitterFollowButton
 				return ''  unless twitterUsername
 
 				# Return
@@ -134,7 +152,8 @@ module.exports = (BasePlugin) ->
 			# Get Github Follow Button
 			getGithubFollowButton: ->
 				# Prepare
-				githubUsername = @site?.services.githubFollowButton
+				services = @getServices()
+				githubUsername = services.githubFollowButton
 				return ''  unless githubUsername
 
 				# Return
@@ -148,10 +167,11 @@ module.exports = (BasePlugin) ->
 			# Get Quora Follow Button
 			getQuoraFollowButton: ->
 				# Prepare
-				quoraUsername = @site?.services.quoraFollowButton or ''
+				services = @getServices()
+				quoraUsername = services.quoraFollowButton or ''
+				return ''  unless quoraUsername
 				quoraRealname = quoraUsername.replace(/-/g,' ')
 				quoraCode = '7N31XJs'
-				return ''  unless quoraUsername
 
 				# Return
 				return """
@@ -166,12 +186,13 @@ module.exports = (BasePlugin) ->
 			# Disqus
 			getDisqus: ->
 				# Prepare
-				disqusShortname = @site?.services.disqus
+				services = @getServices()
+				disqusShortname = services.disqus
+				return ''  unless disqusShortname
 				disqusDeveloper = if 'production' in @getEnvironments() then '0' else '1'
-				pageUrl = (@site.url or '')+@document.url.replace(/\/index.html$/,'').replace(/\/$/,'')
+				pageUrl = @getPageUrl()
 				disqusIdentifier = @document.slug
 				disqusTitle = @document.title or @document.name
-				return ''  unless disqusShortname
 
 				# Return
 				return """
@@ -207,7 +228,8 @@ module.exports = (BasePlugin) ->
 			# Gauges
 			getGauges: ->
 				# Prepare
-				gaugesSiteId = @site?.services?.gauges
+				services = @getServices()
+				gaugesSiteId = services.gauges
 				return ''  unless gaugesSiteId
 
 				# Return
@@ -228,7 +250,8 @@ module.exports = (BasePlugin) ->
 			# Google Analytics
 			getGoogleAnalytics: ->
 				# Prepare
-				googleAccountId = @site?.services?.googleAnalytics
+				services = @getServices()
+				googleAccountId = services.googleAnalytics
 				return ''  unless googleAccountId
 
 				# Return
@@ -246,7 +269,8 @@ module.exports = (BasePlugin) ->
 			# Mixpanel
 			getMixpanel: ->
 				# Prepare
-				mixpanelId = @site?.services?.mixpanel
+				services = @getServices()
+				mixpanelId = services.mixpanel
 				return ''  unless mixpanelId
 
 				# Return
@@ -257,7 +281,8 @@ module.exports = (BasePlugin) ->
 			# Reinvigorate
 			getReinvigorate: ->
 				# Prepare
-				reinvigorateId = @site?.services?.reinvigorate
+				services = @getServices()
+				reinvigorateId = services.reinvigorate
 				return ''  unless reinvigorateId
 
 				# Return
@@ -278,7 +303,8 @@ module.exports = (BasePlugin) ->
 			# Zopim
 			getZopim: ->
 				# Prepare
-				zopimId = @site?.services?.zopim
+				services = @getServices()
+				zopimId = services.zopim
 				return ''  unless zopimId
 
 				# Return

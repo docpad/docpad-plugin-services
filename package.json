@@ -1,6 +1,6 @@
 {
 	"name": "docpad-plugin-services",
-	"version": "2.2.4",
+	"version": "2.2.5",
 	"description": "Adds super simple support for many 3rd party services to DocPad",
 	"homepage": "http://docpad.org/plugin/services",
 	"keywords": [
@@ -33,7 +33,8 @@
 		"docpad": ">=6.3 <7"
 	},
 	"devDependencies": {
-		"coffee-script": "~1.4.0"
+		"coffee-script": "~1.6.2",
+		"docpad": ">=6.37 <7"
 	},
 	"main": "./out/services.plugin.js",
 	"scripts": {
