@@ -4,10 +4,10 @@
 </head>
 <body>
 	<!-- Social Buttons -->
-	<%- @getSocialButtons() %>
+	<%- @getServiceButtons() %>
 
 	<!-- Social Buttons Limited -->
-	<%- @getSocialButtons(['RedditSubmit']) %>
+	<%- @getServiceButtons(buttons: ['RedditSubmit']) %>
 
 	<!-- Disqus -->
 	<%- @getDisqus() %>

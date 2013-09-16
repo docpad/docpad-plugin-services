@@ -1,5 +1,18 @@
 ## History
 
+- v2.3.0 September 17, 2013
+	- Renamed social buttons to service buttons
+		- `getSocialButtons` to `getServiceButtons`
+		- `social-button` to `service-button`
+	- Most of the template helpers now can have the services object swapped out by passing it as the first object
+	- Added support for:
+		- Inspectlet
+		- Travis Status Button
+		- Fury Button
+		- Gittip Button
+		- Flattr Button
+		- Paypal Button
+
 - v2.2.6 May 30, 2013
 	- Can now disable the facebook buttons by setting their `applicationId` property to `false`
 

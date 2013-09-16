@@ -12,9 +12,16 @@
 				twitterFollowButton: 'balupton'
 				githubFollowButton: 'balupton'
 				quoraFollowButton: 'Benjamin-Lupton'
+				travisStatusButton: 'bevry/docpad'
+				furyButton: 'docpad'
+				gittipButton: 'docpad'
+				flattrButton: '344188/balupton-on-Flattr'
+				paypalButton: 'QB8GQPZAH84N6'  # paypal button email id
+
 				disqus: 'disqus-id'
 				gauges: 'gauges-id'
 				googleAnalytics: 'googleAnalytics-id'
+				inspectlet: 'inspectlet-id'
 				mixpanel: 'mixpanel-id'
 				reinvigorate: 'reinvigorate-id'
 				zopim: 'zopim-id'
