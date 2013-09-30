@@ -1,7 +1,10 @@
 ## History
 
+- v2.4.2 September 30, 2013
+	- Fixed inspectlet service (regression from v2.3.0)
+
 - v2.4.1 September 30, 2013
-	- Fixed regression from v2.4.0
+	- Fixed github star error (regression from v2.4.0)
 
 - v2.4.0 September 30, 2013
 	- Added buttons:
@@ -12,8 +15,9 @@
 		- `getSocialButtons` to `getServiceButtons`
 		- `social-button` to `service-button`
 	- Most of the template helpers now can have the services object swapped out by passing it as the first object
-	- Added support for:
+	- Added services:
 		- Inspectlet
+	- Added buttons:
 		- Travis Status Button
 		- Fury Button
 		- Gittip Button
@@ -36,22 +40,22 @@
 
 - v2.2.2 February 11, 2013
 	- Like/submit urls are now clean
-	- Added support for:
-		- Reddit Submit Button
-		- Hacker News Submit Button
+	- Added buttons:
+		- Reddit Submit
+		- Hacker News Submit
 
 - v2.2.1 February 10, 2013
 	- Fixed break when Quora follow button is not configured
 
 - v2.2.0 February 10, 2013
-	- Added support for:
-		- Google Plus One Button
-		- Facebook Like Button
-		- Facebook Follow Button
-		- Twitter Tweet Button
-		- Twitter Follow Button
-		- Github Follow Button
-		- Quora Follow Button
+	- Added buttons:
+		- Google Plus One
+		- Facebook Like
+		- Facebook Follow
+		- Twitter Tweet
+		- Twitter Follow
+		- Github Follow
+		- Quora Follow
 
 - v2.1.0 February 3, 2013
 	- Added support for [Disqus](http://disqus.com/) via `@getDisqus()` template helper
