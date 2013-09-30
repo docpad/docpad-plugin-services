@@ -11,6 +11,7 @@
 				twitterTweetButton: 'balupton'
 				twitterFollowButton: 'balupton'
 				githubFollowButton: 'balupton'
+				githubStarButton: 'bevry/docpad'
 				quoraFollowButton: 'Benjamin-Lupton'
 				travisStatusButton: 'bevry/docpad'
 				furyButton: 'docpad'

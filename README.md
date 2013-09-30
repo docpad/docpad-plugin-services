@@ -30,6 +30,7 @@ These social buttons:
 - Twitter Tweet
 - Twitter Follow
 - Github Follow
+- Github Star
 - Quora Follow
 
 These service badges:
@@ -86,6 +87,7 @@ templateData:
 			twitterTweetButton: 'balupton'
 			twitterFollowButton: 'balupton'
 			githubFollowButton: 'balupton'
+			githubStarButton: 'bevry/docpad'
 			quoraFollowButton: 'Benjamin-Lupton'
 			travisStatusButton: 'bevry/docpad'
 			furyButton: 'docpad'

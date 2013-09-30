@@ -1,5 +1,9 @@
 ## History
 
+- v2.4.0 September 30, 2013
+	- Added buttons:
+		- Github Star
+
 - v2.3.0 September 17, 2013
 	- Renamed social buttons to service buttons
 		- `getSocialButtons` to `getServiceButtons`

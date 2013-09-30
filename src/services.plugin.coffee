@@ -49,6 +49,7 @@ module.exports = (BasePlugin) ->
 					'TwitterTweet'
 					'TwitterFollow'
 					'GithubFollow'
+					'GithubStar'
 					'QuoraFollow'
 				]
 
@@ -307,10 +308,26 @@ module.exports = (BasePlugin) ->
 				# Return
 				return """
 					<div class="github-follow-button service-button">
-						<iframe src="//ghbtns.com/github-btn.html?user=#{githubUsername}&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+						<iframe src="//ghbtns.com/github-btn.html?user=#{githubUsername}&amp;type=follow&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
 					</div>
 					"""
 
+			# Get GitHub Star Button
+			getGithubStarButton: ->
+				# Prepare
+				services = @getServices()
+				parts = services.githubStarButton.split('/')
+				return ''  unless parts.length is 2
+				githubUsername = parts[0]
+				githubRepo = parts[1]
+				return ''  unless githubUsername or githubRepo
+
+				# Return
+				return """
+					<div class="github-star-button service-button">
+						<iframe src="//ghbtns.com/github-btn.html?user=#{githubUsername}&amp;repo=#{githubRepo}&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+					</div>
+					"""
 
 			# Get Quora Follow Button
 			getQuoraFollowButton: (services) ->
