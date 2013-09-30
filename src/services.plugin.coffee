@@ -57,7 +57,8 @@ module.exports = (BasePlugin) ->
 				result = ''
 				for button in buttons
 					buttonAdjusted = button[0].toUpperCase()+button[1...]
-					fn = @['get'+buttonAdjusted+'Button']
+					fnName = 'get'+buttonAdjusted+'Button'
+					fn = @[fnName]
 					if fn?
 						result += fn.call(@, services)
 					else
@@ -313,14 +314,13 @@ module.exports = (BasePlugin) ->
 					"""
 
 			# Get GitHub Star Button
-			getGithubStarButton: ->
+			getGithubStarButton: (services) ->
 				# Prepare
-				services = @getServices()
-				parts = services.githubStarButton.split('/')
-				return ''  unless parts.length is 2
+				services ?= @getServices()
+				parts = services.githubStarButton?.split('/')
+				return ''  unless parts?.length is 2 and parts[0] and parts[1]
 				githubUsername = parts[0]
 				githubRepo = parts[1]
-				return ''  unless githubUsername or githubRepo
 
 				# Return
 				return """

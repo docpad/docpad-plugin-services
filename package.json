@@ -1,43 +1,55 @@
 {
-	"name": "docpad-plugin-services",
-	"version": "2.4.0",
-	"description": "Adds super simple support for many 3rd party services to DocPad",
-	"homepage": "http://docpad.org/plugin/services",
-	"keywords": [
-		"docpad",
-		"docpad-plugin",
-		"gauges", "gaug.es",
-		"ga", "google analytics", "analytics",
-		"facebook-like", "facebook-follow", "twitter-tweet", "twitter-follow",
-		"github-follow", "quora-follow", "hacker-news-submit", "reddit-submit",
-		"mixpanel",
-		"reinvigorate",
-		"zopim"
-	],
-	"author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
-	"maintainers": [
-		"Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-	],
-	"contributors": [
-		"Benjamin Lupton <b@lupton.cc>(https://github.com/balupton)"
-	],
-	"bugs": {
-		"url": "http://docpad.org/plugin/services/issues"
-	},
-	"repository" : {
-		"type": "git",
-		"url": "https://github.com/docpad/docpad-plugin-services.git"
-	},
-	"engines" : {
-		"node": ">=0.4",
-		"docpad": ">=6.3 <7"
-	},
-	"devDependencies": {
-		"coffee-script": "~1.6.2",
-		"docpad": ">=6.37 <7"
-	},
-	"main": "./out/services.plugin.js",
-	"scripts": {
-		"test": "node ./out/services.test.js"
-	}
+  "name": "docpad-plugin-services",
+  "version": "2.4.1",
+  "description": "Adds super simple support for many 3rd party services to DocPad",
+  "homepage": "http://docpad.org/plugin/services",
+  "keywords": [
+    "docpad",
+    "docpad-plugin",
+    "gauges",
+    "gaug.es",
+    "ga",
+    "google analytics",
+    "analytics",
+    "facebook-like",
+    "facebook-follow",
+    "twitter-tweet",
+    "twitter-follow",
+    "github-follow",
+    "quora-follow",
+    "hacker-news-submit",
+    "reddit-submit",
+    "mixpanel",
+    "reinvigorate",
+    "zopim"
+  ],
+  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "maintainers": [
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+  ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc>(https://github.com/balupton)"
+  ],
+  "bugs": {
+    "url": "http://docpad.org/plugin/services/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/docpad/docpad-plugin-services.git"
+  },
+  "engines": {
+    "node": ">=0.4",
+    "docpad": ">=6.3 <7"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.2",
+    "docpad": ">=6.37 <7"
+  },
+  "main": "./out/services.plugin.js",
+  "scripts": {
+    "test": "node ./out/services.test.js"
+  },
+  "dependencies": {
+    "extendr": "~2.1.0"
+  }
 }

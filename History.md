@@ -1,5 +1,8 @@
 ## History
 
+- v2.4.1 September 30, 2013
+	- Fixed regression from v2.4.0
+
 - v2.4.0 September 30, 2013
 	- Added buttons:
 		- Github Star
