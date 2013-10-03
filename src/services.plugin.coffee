@@ -486,7 +486,7 @@ module.exports = (BasePlugin) ->
 				# Prepare
 				services ?= @getServices()
 				inspectlit = services.inspectlit
-				return ''  unless services
+				return ''  unless inspectlit
 
 				# Return
 				return """
