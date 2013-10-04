@@ -485,15 +485,15 @@ module.exports = (BasePlugin) ->
 			getInspectlet: (services) ->
 				# Prepare
 				services ?= @getServices()
-				inspectlit = services.inspectlit
-				return ''  unless services
+				inspectlet = services.inspectlet
+				return ''  unless inspectlet
 
 				# Return
 				return """
 					<!-- Begin Inspectlet Embed Code -->
 					<script id="inspectletjs">
 						window.__insp = window.__insp || [];
-						__insp.push(['wid', #{inspectlit}]);
+						__insp.push(['wid', #{inspectlet}]);
 						(function() {
 							function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://www.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
 							if (window.attachEvent){
