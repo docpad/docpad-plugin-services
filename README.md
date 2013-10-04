@@ -70,7 +70,7 @@ Ensure your layout includes the scripts block. With eco, it will look something 
 <%- @getBlock('scripts').toHTML() %>
 ```
 
-This is used for the Gauges, Google Analytics, Mixpanel, Reinvigorate, and Zopim services.
+This is used for the Gauges, Google Analytics, Google Analytics Universal, Mixpanel, Reinvigorate, and Zopim services.
 
 
 ### Add Template Helpers for special services
@@ -106,10 +106,11 @@ templateData:
 			gittipButton: 'docpad'
 			flattrButton: '344188/balupton-on-Flattr'
 			paypalButton: 'QB8GQPZAH84N6'  # paypal button email id
-			
+
 			disqus: 'disqus-id'
 			gauges: 'gauges-id'
 			googleAnalytics: 'googleAnalytics-id'
+			googleAnalyticsUniversal: 'googleAnalyticsUniversal-id'
 			inspectlet: 'inspectlet-id'
 			mixpanel: 'mixpanel-id'
 			reinvigorate: 'reinvigorate-id'

@@ -435,6 +435,25 @@ module.exports = (BasePlugin) ->
 					})();
 					"""
 
+			# Google Analytics Universal
+			getGoogleAnalyticsUniversal: (services) ->
+				# Prepare
+				services ?= @getServices()
+				googleAccountId = services.googleAnalyticsUniversal
+				siteUrl = @site.url.replace(/^https?:\/\//,'')
+				return ''  unless googleAccountId
+
+				# Return
+				return """
+					(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+					})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+					ga('create', '#{googleAccountId}', '#{siteUrl}');
+					ga('send', 'pageview');
+					"""
+
 			# Mixpanel
 			getMixpanel: (services) ->
 				# Prepare
@@ -532,7 +551,7 @@ module.exports = (BasePlugin) ->
 			scripts = []
 
 			# Service Scripts
-			serviceScripts = ['Gauges','GoogleAnalytics','Mixpanel','Reinvigorate','Zopim','Inspectlet']
+			serviceScripts = ['Gauges','GoogleAnalytics','GoogleAnalyticsUniversal','Mixpanel','Reinvigorate','Zopim','Inspectlet']
 			for serviceScript in serviceScripts
 				serviceScriptContent = templateData['get'+serviceScript].call(templateData)
 				scripts.push(serviceScriptContent)  if serviceScriptContent

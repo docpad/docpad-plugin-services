@@ -22,6 +22,7 @@
 				disqus: 'disqus-id'
 				gauges: 'gauges-id'
 				googleAnalytics: 'googleAnalytics-id'
+				googleAnalyticsUniversal: 'googleAnalyticsUniversal-id'
 				inspectlet: 'inspectlet-id'
 				mixpanel: 'mixpanel-id'
 				reinvigorate: 'reinvigorate-id'
