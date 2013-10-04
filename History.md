@@ -1,5 +1,8 @@
 ## History
 
+- v2.4.4 October 5, 2013
+	- Fixed inspectlet error for everyone not using it (regression from v2.3.0)
+
 - v2.4.3 October 4, 2013
 	- Fixed inspectlet service (regression from v2.3.0)
 
