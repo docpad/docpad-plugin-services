@@ -51,6 +51,6 @@
     "extendr": "~2.1.0"
   },
   "peerDependencies": {
-    "docpad": "6"
+    "docpad": ">=6.3 <7"
   }
 }
