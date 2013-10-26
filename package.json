@@ -38,8 +38,7 @@
     "url": "https://github.com/docpad/docpad-plugin-services.git"
   },
   "engines": {
-    "node": ">=0.4",
-    "docpad": ">=6.3 <7"
+    "node": ">=0.4"
   },
   "devDependencies": {
     "coffee-script": "~1.6.2"
