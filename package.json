@@ -42,8 +42,7 @@
     "docpad": ">=6.3 <7"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.2",
-    "docpad": ">=6.37 <7"
+    "coffee-script": "~1.6.2"
   },
   "main": "./out/services.plugin.js",
   "scripts": {
@@ -51,5 +50,8 @@
   },
   "dependencies": {
     "extendr": "~2.1.0"
+  },
+  "peerDependencies": {
+    "docpad": "6"
   }
 }
