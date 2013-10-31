@@ -111,7 +111,7 @@ module.exports = (BasePlugin) ->
 				return """
 					<div class="travis-status-button service-button">
 						<a href="http://travis-ci.org/bevry/docpad" title="Check this project's build status on TravisCI">
-							<img alt="Build status" src="//secure.travis-ci.org/#{code}.png?branch=master" />
+							<img alt="Build status" src="//img.shields.io/travis-ci/#{code}.png?branch=master" />
 						</a>
 					</div>
 					"""
@@ -143,7 +143,7 @@ module.exports = (BasePlugin) ->
 				return """
 					<div class="gittip-button service-button">
 						<a href="https://www.gittip.com/#{code}/" title="Donate weekly to this project using Gittip">
-							<img alt="Gittip donate button" src="//badgr.co/gittip/#{code}.png" />
+							<img alt="Gittip donate button" src="//img.shields.io/gittip/#{code}.png" />
 						</a>
 					</div>
 					"""
@@ -175,7 +175,7 @@ module.exports = (BasePlugin) ->
 				return """
 					<div class="paypal-button service-button">
 						<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=#{code}" title="Donate once-off to this project using Paypal">
-							<img alt="Paypal donate button" src="//www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif" />
+							<img alt="Paypal donate button" src="//img.shields.io/paypal/donate.png?color=yellow" />
 						</a>
 					</div>
 					"""

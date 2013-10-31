@@ -1,5 +1,8 @@
 ## History
 
+- v2.4.5 October 31, 2013
+	- Use shields.io for badges
+
 - v2.4.4 October 5, 2013
 	- Fixed inspectlet error for everyone not using it (regression from v2.3.0)
 

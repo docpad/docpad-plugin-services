@@ -1,8 +1,19 @@
 {
+  "title": "Services Plugin for [DocPad](http://docpad.org)",
   "name": "docpad-plugin-services",
-  "version": "2.4.4",
+  "version": "2.4.5",
   "description": "Adds super simple support for many 3rd party services to DocPad",
   "homepage": "http://docpad.org/plugin/services",
+  "license": {
+    "type": "MIT"
+  },
+  "badges": {
+    "travis": true,
+    "npm": true,
+    "gittip": "docpad",
+    "flattr": "344188/balupton-on-Flattr",
+    "paypal": "QB8GQPZAH84N6"
+  },
   "keywords": [
     "docpad",
     "docpad-plugin",
@@ -21,14 +32,18 @@
     "reddit-submit",
     "mixpanel",
     "reinvigorate",
-    "zopim"
+    "zopim",
+    "travis",
+    "travisci",
+    "travis-ci",
+    "shields.io"
   ],
-  "author": "Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "author": "2012+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc>(https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "bugs": {
     "url": "http://docpad.org/plugin/services/issues"
@@ -41,7 +56,8 @@
     "node": ">=0.4"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.2"
+    "coffee-script": "~1.6.2",
+    "projectz": "~0.2.3"
   },
   "main": "./out/services.plugin.js",
   "scripts": {
