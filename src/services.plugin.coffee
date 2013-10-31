@@ -159,7 +159,7 @@ module.exports = (BasePlugin) ->
 				return """
 					<div class="flattr-button service-button">
 						<a href="http://flattr.com/thing/#{code}" title="Donate monthly to this project using Flattr">
-							<img alt="Flattr donate button" src="//raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif" />
+							<img alt="Flattr donate button" src="//img.shields.io/flattr/donate.png?color=yellow" />
 						</a>
 					</div>
 					"""
