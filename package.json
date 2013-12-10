@@ -1,7 +1,7 @@
 {
   "title": "Services Plugin for [DocPad](http://docpad.org)",
   "name": "docpad-plugin-services",
-  "version": "2.4.6",
+  "version": "2.5.0",
   "description": "Adds super simple support for many 3rd party services to DocPad",
   "homepage": "http://docpad.org/plugin/services",
   "license": {
@@ -64,7 +64,8 @@
     "test": "node ./out/services.test.js"
   },
   "dependencies": {
-    "extendr": "~2.1.0"
+    "extendr": "~2.1.0",
+    "projectz": "~0.2.7"
   },
   "peerDependencies": {
     "docpad": ">=6.3 <7"

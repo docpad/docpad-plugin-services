@@ -9,10 +9,10 @@
 <!-- BADGES/ -->
 
 [![Build Status](http://img.shields.io/travis-ci/docpad/docpad-plugin-services.png?branch=master)](http://travis-ci.org/docpad/docpad-plugin-services "Check this project's build status on TravisCI")
-[![NPM version](https://badge.fury.io/js/docpad-plugin-services.png)](https://npmjs.org/package/docpad-plugin-services "View this project on NPM")
+[![NPM version](http://badge.fury.io/js/docpad-plugin-services.png)](https://npmjs.org/package/docpad-plugin-services "View this project on NPM")
 [![Gittip donate button](http://img.shields.io/gittip/docpad.png)](https://www.gittip.com/docpad/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
 
 <!-- /BADGES -->
 
@@ -27,6 +27,7 @@ These 3rd party services:
 - [Disqus](http://disqus.com/)
 - [Gauges](http://gaug.es/)
 - [Google Analytics](http://www.google.com.au/analytics/)
+	- NOTE: v2.5.0 of this plugin and after are for the new [Google Universal Analytics API](https://developers.google.com/analytics/devguides/collection/upgrade/), if you have not yet upgraded, then you will want to use v2.4 of this plugin or earlier.
 - [Inspectlet](http://www.inspectlet.com/)
 - [Mixpanel](https://mixpanel.com/)
 - [Reinvigorate](https://www.reinvigorate.net/)
@@ -163,8 +164,8 @@ These amazing people are maintaining this project:
 No sponsors yet! Will you be the first?
 
 [![Gittip donate button](http://img.shields.io/gittip/docpad.png)](https://www.gittip.com/docpad/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
-[![PayPayl donate button](https://www.paypalobjects.com/en_AU/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/344188/balupton-on-Flattr "Donate monthly to this project using Flattr")
+[![PayPayl donate button](http://img.shields.io/paypal/donate.png?color=yellow)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QB8GQPZAH84N6 "Donate once-off to this project using Paypal")
 
 ### Contributors
 

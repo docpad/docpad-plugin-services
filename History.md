@@ -1,4 +1,7 @@
-## History
+# History
+
+- v2.5.0 December 10, 2013
+	- Use [Google Universal Analytics](https://developers.google.com/analytics/devguides/collection/upgrade/) instead of the now-old ga.js API
 
 - v2.4.6 October 31, 2013
 	- Use shields.io for flattr as well
