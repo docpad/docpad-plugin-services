@@ -93,7 +93,8 @@ templateData:
 	site:
 		url: 'http://my-production-website.com'
 		services:
-			buttons: ['FacebookLike']  # used to customise the order of the buttons
+			socialButtons: ['FacebookLike']  # used to customise the order of the social buttons
+			serviceBadges: ['Flattr'] # used to customise the order of the service badges
 
 			facebookLikeButton:
 				applicationId: '266367676718271'
