@@ -1,5 +1,9 @@
 # History
 
+- v2.6.0 May 17, 2014
+	- Better reddit button that now uses the page url
+	- Better hacker news button (new ideal width is `100px`)
+
 - v2.5.0 December 10, 2013
 	- Use [Google Universal Analytics](https://developers.google.com/analytics/devguides/collection/upgrade/) instead of the now-old ga.js API
 
