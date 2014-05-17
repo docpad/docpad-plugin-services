@@ -50,7 +50,7 @@
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "bugs": {
-    "url": "http://docpad.org/plugin/services/issues"
+    "url": "https://github.com/docpad/docpad-plugin-services/issues"
   },
   "repository": {
     "type": "git",
@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "coffee-script": "~1.6.2",
-    "projectz": "~0.3.5",
+    "projectz": "~0.3.13",
     "docpad": ">=6.3 <7"
   },
   "main": "./out/services.plugin.js",
@@ -75,6 +75,9 @@
     "test": "node ./out/services.test.js"
   },
   "cakeConfigation": {
+    "COFFEE_SRC_PATH": "src"
+  },
+  "cakeConfiguration": {
     "COFFEE_SRC_PATH": "src"
   }
 }
