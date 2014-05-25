@@ -354,10 +354,10 @@ module.exports = (BasePlugin) ->
 				return ''  unless disqusShortname
 				disqusDeveloper = if 'production' in @getEnvironments() then '0' else '1'
 				pageUrl = @getPageUrl()
-                if (@document.disqusIdentifier !== undefined)
-				    disqusIdentifier = @document.disqusIdentifier
-                else
-                    disqusIdentifier= @document.slug
+				if @document.disqusIdentifier isnt undefined
+					disqusIdentifier = @document.disqusIdentifier
+				else
+					disqusIdentifier = @document.slug
 				disqusTitle = @document.title or @document.name
 
 				# Return
