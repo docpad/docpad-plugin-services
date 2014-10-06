@@ -355,7 +355,7 @@ module.exports = (BasePlugin) ->
 				disqusDeveloper = if 'production' in @getEnvironments() then '0' else '1'
 				pageUrl = @getPageUrl()
 				disqusIdentifier = @document.slug
-				disqusTitle = @document.title or @document.name
+				disqusTitle = (@document.title or @document.name).replace '\'', '\\\''
 
 				# Return
 				return """
