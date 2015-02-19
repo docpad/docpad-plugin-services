@@ -179,6 +179,9 @@ No sponsors yet! Will you be the first?
 These amazing people have contributed code to this project:
 
 - [Benjamin Lupton](https://github.com/balupton) <b@lupton.cc> — [view contributions](https://github.com/docpad/docpad-plugin-services/commits?author=balupton)
+- [RobLoach](https://github.com/RobLoach) — [view contributions](https://github.com/docpad/docpad-plugin-services/commits?author=RobLoach)
+- [troykershaw](https://github.com/troykershaw) — [view contributions](https://github.com/docpad/docpad-plugin-services/commits?author=troykershaw)
+- [Zearin](https://github.com/Zearin) — [view contributions](https://github.com/docpad/docpad-plugin-services/commits?author=Zearin)
 
 [Become a contributor!](https://github.com/docpad/docpad-plugin-services/blob/master/CONTRIBUTING.md#files)
 

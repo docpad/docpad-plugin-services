@@ -48,7 +48,10 @@
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
+    "RobLoach (https://github.com/RobLoach)",
+    "troykershaw (https://github.com/troykershaw)",
+    "Zearin (https://github.com/Zearin)"
   ],
   "bugs": {
     "url": "https://github.com/docpad/docpad-plugin-services/issues"
@@ -68,7 +71,7 @@
   },
   "devDependencies": {
     "coffee-script": "^1.9.0",
-    "projectz": "^0.4.2",
+    "projectz": "^0.4.3",
     "docpad": ">=6.3 <7"
   },
   "main": "./out/services.plugin.js",
