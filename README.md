@@ -87,7 +87,7 @@ This is used for the Gauges, Google Analytics, Mixpanel, Reinvigorate, and Zopim
 
 ## Configure
 
-Add the following to your [docpad configuration file](http://bevry.me/docpad/config):
+Add the following to your [docpad configuration file](http://docpad.org/docs/config/):
 
 ``` coffee
 # ...
@@ -105,9 +105,9 @@ templateData:
 			twitterTweetButton: 'balupton'
 			twitterFollowButton: 'balupton'
 			githubFollowButton: 'balupton'
-			githubStarButton: 'bevry/docpad'
+			githubStarButton: 'docpad/docpad'
 			quoraFollowButton: 'Benjamin-Lupton'
-			travisStatusButton: 'bevry/docpad'
+			travisStatusButton: 'docpad/docpad'
 			furyButton: 'docpad'
 			gittipButton: 'docpad'
 			flattrButton: '344188/balupton-on-Flattr'
