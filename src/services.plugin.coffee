@@ -110,7 +110,7 @@ module.exports = (BasePlugin) ->
 				# Return
 				return """
 					<div class="travis-status-button service-button">
-						<a href="http://travis-ci.org/bevry/docpad" title="Check this project's build status on TravisCI">
+						<a href="https://travis-ci.org/docpad/docpad" title="Check this project's build status on TravisCI">
 							<img alt="Build status" src="//img.shields.io/travis-ci/#{code}.png?branch=master" />
 						</a>
 					</div>
@@ -158,7 +158,7 @@ module.exports = (BasePlugin) ->
 				# Return
 				return """
 					<div class="flattr-button service-button">
-						<a href="http://flattr.com/thing/#{code}" title="Donate monthly to this project using Flattr">
+						<a href="https://flattr.com/thing/#{code}" title="Donate monthly to this project using Flattr">
 							<img alt="Flattr donate button" src="//img.shields.io/flattr/donate.png?color=yellow" />
 						</a>
 					</div>
@@ -212,7 +212,7 @@ module.exports = (BasePlugin) ->
 				return """
 					<div class="reddit-submit-button service-button">
 						<script>reddit_url="#{pageUrl}"</script>
-						<script src="http://en.reddit.com/static/button/button1.js"></script>
+						<script src="https://en.reddit.com/static/button/button1.js"></script>
 					</div>
 					"""
 
@@ -336,7 +336,7 @@ module.exports = (BasePlugin) ->
 				return """
 					<div class="quora-follow-button service-button">
 						<span class="quora-follow-button" data-name="#{quoraUsername}">
-							Follow <a href="http://www.quora.com/#{quoraUsername}">#{quoraRealname}</a> on <a href="http://www.quora.com">Quora</a>
+							Follow <a href="https://www.quora.com/#{quoraUsername}">#{quoraRealname}</a> on <a href="https://www.quora.com">Quora</a>
 							<script src="//www.quora.com/widgets/follow?embed_code=#{quoraCode}"></script>
 						</span>
 					</div>
@@ -379,13 +379,13 @@ module.exports = (BasePlugin) ->
 							}
 							else {
 							  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-							  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+							  dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
 							  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 							}
 						})();
 					</script>
-					<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-					<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+					<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 					"""
 
 			# Gauges

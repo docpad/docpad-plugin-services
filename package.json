@@ -4,9 +4,7 @@
   "version": "2.6.0",
   "description": "Adds super simple support for many 3rd party services to DocPad",
   "homepage": "http://docpad.org/plugin/services",
-  "license": {
-    "type": "MIT"
-  },
+  "license": "MIT",
   "badges": {
     "travis": true,
     "npm": true,
