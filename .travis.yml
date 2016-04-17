@@ -1,5 +1,6 @@
 # February 19, 2015
 # https://github.com/bevry/base
+sudo: false
 language: node_js
 # ensure npm is the latest version (ignore node versions that can't run it)
 # ensure coffee-script is installed (needed for cake commands)
