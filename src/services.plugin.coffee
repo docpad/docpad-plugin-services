@@ -40,7 +40,7 @@ module.exports = (BasePlugin) ->
 			getSocialButtons: (services) ->
 				# Prepare
 				services ?= @getServices()
-				buttons = services.buttons or [
+				buttons = services.socialButtons or [
 					'GooglePlusOne'
 					'RedditSubmit'
 					'HackerNewsSubmit'
@@ -73,7 +73,7 @@ module.exports = (BasePlugin) ->
 			getServiceBadges: (services) ->
 				# Prepare
 				services ?= @getServices()
-				buttons = services.buttons or [
+				buttons = services.serviceBadges or [
 					'TravisStatus'
 					'Fury'
 					'Gittip'
