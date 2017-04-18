@@ -1,7 +1,7 @@
 {
-  "title": "Services Plugin for [DocPad](http://docpad.org)",
+  "title": "Services Plugin for DocPad",
   "name": "docpad-plugin-services",
-  "version": "2.6.0",
+  "version": "2.7.0",
   "description": "Adds super simple support for many 3rd party services to DocPad",
   "homepage": "https://github.com/docpad/docpad-plugin-services",
   "license": "MIT",
@@ -79,7 +79,7 @@
     "url": "https://github.com/docpad/docpad-plugin-services.git"
   },
   "engines": {
-    "node": ">=0.8"
+    "node": ">=0.12"
   },
   "editions": [
     {

@@ -1,6 +1,6 @@
 <!-- TITLE/ -->
 
-<h1>Services Plugin for [DocPad](http://docpad.org)</h1>
+<h1>Services Plugin for DocPad</h1>
 
 <!-- /TITLE -->
 

@@ -1,5 +1,9 @@
 # History
 
+## v2.7.0 2017 April 18
+- Updated base files
+- Bumped minimum node version to >=0.12 due to [failed builds on earlier](https://travis-ci.org/docpad/docpad-plugin-services/builds/222830570)
+
 ## v2.6.0 2014 May 17
 - Better reddit button that now uses the page url
 - Better hacker news button (new ideal width is `100px`)
