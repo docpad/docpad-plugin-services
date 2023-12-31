@@ -130,7 +130,7 @@
     "docpad": "^6.83.2",
     "docpad-plugintester": "^1.7.3",
     "projectz": "^2.17.0",
-    "valid-directory": "^3.5.0"
+    "valid-directory": "^4.9.0"
   },
   "peerDependencies": {
     "docpad": "^6.83.2"
